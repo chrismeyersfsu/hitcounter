@@ -22,4 +22,5 @@ http.createServer(function(request, response) {
   response.end();
 }).listen(port);
 
-console.log("Server running at http://0.0.0.0:" + port);
+var date = new Date;
+console.log(date + " - Server running at http://0.0.0.0:" + port);
