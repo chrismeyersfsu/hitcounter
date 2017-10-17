@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: hitcounter
+ labels:
+   name: hitcounter
+spec:
+ type: LoadBalancer
+ ports:
+   - port: 8300
+     targetPort: 8080
+     protocol: TCP
+ selector:
+   app: hitcounter

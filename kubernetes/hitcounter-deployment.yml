@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: hitcounter-deployment
+  labels:
+    app: hitcounter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hitcounter
+  template:
+    metadata:
+      labels:
+        app: hitcounter
+    spec:
+      containers:
+      - name: hitcounter
+        image: chrismeyers/node-hitcounter:latest
+        ports:
+        - containerPort: 8080
